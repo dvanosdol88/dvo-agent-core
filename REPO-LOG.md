@@ -2,16 +2,20 @@
 
 > Persistent activity memory for this repo. Read this before changing shared agent contracts.
 
-## Current State
+## Current Capabilities
 
-- Package: `@dvo/agent-core`
-- Version: `0.1.2`
-- Purpose: shared low-risk TypeScript contracts and handoff helpers for David's Chief/CTO infrastructure.
-- Scope: agent identity, thread/message/content block types, handoff report schema, prompt/canon helpers, and tool contract shapes.
-- Guardrail: app-specific behavior stays in consuming apps; RIA Builder should not consume this package until CTO usage is stable.
-- Verification: run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
+`@dvo/agent-core` v0.1.3 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It currently exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts (`search_thread_history`, `get_operator_profile`, `get_launch_state`, `list_milestones`, `search_canon`), and save-receipt metadata. App-specific behavior stays in consuming apps; CTO is the first consumer, and RIA Builder/RIA Chief should not consume it until CTO-side behavior is stable and separately verified. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
 
-## Log
+## Sessions
+
+### 2026-04-30 - Wrapped CTO-first memory retrieval rollout
+**Agent:** Codex (GPT-5) | **Surface:** cross-cutting | **Duration:** end-of-session
+
+- changed: refreshed this repo log to the wrap-up format with a current capabilities snapshot for CTO intake.
+- verified: `npm test` passed with 12 Node test cases after TypeScript build.
+- verified: consuming CTO checks in `D:\dvo88\dvo88-command-center` passed: thread-search smoke test, targeted server type-check, and `npm run build`.
+- deployed: `@dvo/agent-core` v0.1.3 is published via pushed GitHub tag; CTO/dvo88 consumes it in production.
+- next: let CTO soak with read-only older-thread retrieval before adding a model-callable tool loop or porting any behavior to RIA Chief.
 
 ### 2026-04-30 - Added Phase 2A memory retrieval contracts
 
