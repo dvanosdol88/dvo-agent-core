@@ -2,7 +2,7 @@
 
 Shared low-risk TypeScript contracts and handoff helpers for David's agent infrastructure.
 
-This package intentionally starts small. It is for generic Chief/CTO contracts, report formatting, message/content types, prompt-block helpers, and tool interface shapes. App-specific behavior stays in the consuming app.
+This package intentionally starts small. It is for generic Chief/CTO contracts, report formatting, message/content types, prompt-block helpers, tool interface shapes, and memory retrieval/save-receipt contract shapes. App-specific behavior stays in the consuming app.
 
 ## Guardrails
 
@@ -11,3 +11,14 @@ This package intentionally starts small. It is for generic Chief/CTO contracts, 
 - No RIA Builder dependency in v0.1.0.
 - RIA Builder does not consume this package until CTO usage is stable.
 
+## Memory Contracts
+
+`v0.1.3` exports the Phase 2A retrieval contract names:
+
+- `search_thread_history`
+- `get_operator_profile`
+- `get_launch_state`
+- `list_milestones`
+- `search_canon`
+
+It also exports `MemorySearchResult` and `buildMemorySaveReceipt()` so consuming apps can report where facts were found or saved without pretending all memory is one prompt.

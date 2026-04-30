@@ -17,6 +17,7 @@
 
 - changed: bumped package to `0.1.3` and added shared memory contract exports for `search_thread_history`, `get_operator_profile`, `get_launch_state`, `list_milestones`, `search_canon`, and save-receipt metadata.
 - added: `src/memory.ts` and test coverage for canonical tool names, thread-history contract schema, search-result metadata, and save receipts.
+- documented: README now describes the Phase 2A memory contract exports.
 - verified: `npm test` passed with 12 Node test cases after TypeScript build.
 - next: consume `v0.1.3` from CTO first; keep RIA Builder out until CTO-side retrieval behavior is stable.
 
