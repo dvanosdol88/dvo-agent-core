@@ -13,6 +13,13 @@
 
 ## Log
 
+### 2026-04-29 - Phase 1 memory retrieval audit input
+
+- changed: recorded the RIA Chief first memory-retrieval audit outcome as input to shared contract design; implementation work stayed in `D:\riabuilder\RIA-builder`.
+- design note: do not treat larger history windows as the memory system. Phase 2 should define shared retrieval/save contracts before wiring RIA Builder to this package.
+- recommended contracts: `search_thread_history`, `get_operator_profile`, `get_launch_state`, `list_milestones`, `search_canon`, and save receipts that identify memory layer, document ID, visibility, and retrieval path.
+- guardrail: CTO remains the first shared-package consumer; RIA Chief should adopt only after CTO-side contract behavior is stable and separately verified.
+
 ### 2026-04-29 - Initial repo log
 
 - changed: created `REPO-LOG.md` for this shared tools package so future agents have a durable local handoff surface.
