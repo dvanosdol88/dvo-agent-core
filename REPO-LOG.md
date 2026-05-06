@@ -14,6 +14,7 @@
 
 - changed: bumped package metadata to `0.1.4` and added generic Workspace contract exports for list/search/read/create/append/folder/rename/move/copy file operations.
 - added: `src/workspace.ts` with provider/file/result/receipt types plus canonical tool contracts and lookup helper.
+- committed: `220bed0` (`feat: add workspace tool contracts`) and pushed to `main`.
 - verified: `npm test` passed with 17 Node test cases after TypeScript build.
 - boundary: no Google API execution, Firebase auth, secrets, token storage, or RIA Builder-specific behavior was added to the shared package.
 
