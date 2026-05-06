@@ -4,11 +4,21 @@
 
 ## Current Capabilities
 
-`@dvo/agent-core` v0.1.3 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It currently exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts (`search_thread_history`, `get_operator_profile`, `get_launch_state`, `list_milestones`, `search_canon`), and save-receipt metadata. App-specific behavior stays in consuming apps; CTO is the first consumer, and RIA Builder/RIA Chief should not consume it until CTO-side behavior is stable and separately verified. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
+`@dvo/agent-core` v0.1.4 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It currently exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts (`search_thread_history`, `get_operator_profile`, `get_launch_state`, `list_milestones`, `search_canon`), Workspace/Drive file-operation contracts, and save-receipt metadata. App-specific behavior stays in consuming apps; CTO is the first consumer, and RIA Builder/RIA Chief should not take a production dependency until package distribution and consumer verification are handled separately. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
 
 ## Sessions
 
+### 2026-05-06 - Added Workspace/Drive shared contracts
+
+**Agent:** Codex GPT-5 | **Surface:** shared contracts / RIA Chief support | **Duration:** implementation slice
+
+- changed: bumped package metadata to `0.1.4` and added generic Workspace contract exports for list/search/read/create/append/folder/rename/move/copy file operations.
+- added: `src/workspace.ts` with provider/file/result/receipt types plus canonical tool contracts and lookup helper.
+- verified: `npm test` passed with 17 Node test cases after TypeScript build.
+- boundary: no Google API execution, Firebase auth, secrets, token storage, or RIA Builder-specific behavior was added to the shared package.
+
 ### 2026-04-30 - Wrapped CTO-first memory retrieval rollout
+
 **Agent:** Codex (GPT-5) | **Surface:** cross-cutting | **Duration:** end-of-session
 
 - changed: refreshed this repo log to the wrap-up format with a current capabilities snapshot for CTO intake.

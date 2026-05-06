@@ -22,3 +22,9 @@ This package intentionally starts small. It is for generic Chief/CTO contracts, 
 - `search_canon`
 
 It also exports `MemorySearchResult` and `buildMemorySaveReceipt()` so consuming apps can report where facts were found or saved without pretending all memory is one prompt.
+
+## Workspace Contracts
+
+`v0.1.4` adds generic Workspace/Drive contract names and result/receipt shapes for connected-file operations such as listing, searching, reading bounded text, creating documents/folders, appending to documents, renaming, moving, and copying files.
+
+The package still does not implement Google APIs, Firebase checks, token storage, or app-specific write behavior. Consuming apps own provider-specific execution and auth.
