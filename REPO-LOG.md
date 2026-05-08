@@ -4,9 +4,18 @@
 
 ## Current Capabilities
 
-`@dvo/agent-core` v0.1.6 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts, Workspace/Drive file-operation contracts, public-web research contracts, and action-receipt/surface-sync proposal contracts. App-specific behavior stays in consuming apps; CTO is the first consumer, and RIA Builder/RIA Chief should only consume tagged contracts after CTO-side verification. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
+`@dvo/agent-core` v0.1.6 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts, Workspace/Drive file-operation contracts, public-web research contracts, and action-receipt/surface-sync proposal contracts. App-specific behavior stays in consuming apps: RIA Builder now implements the public-web tools for RIA Chief through Tavily, while CTO currently consumes the v0.1.6 contract vocabulary without a runtime web tool loop. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
 
 ## Sessions
+
+### 2026-05-08 - Wrapped public-web workspace rollout
+
+**Agent:** Codex GPT-5 | **Surface:** cross-cutting | **Duration:** end-of-session
+
+- changed: refreshed the current capability snapshot after the public-web workspace rollout landed across core, RIA Builder, and CTO.
+- verified: `npm test` passed with 25 Node test cases after TypeScript build.
+- deployed: `@dvo/agent-core` v0.1.6 is pushed and tagged; RIA Builder production and dvo88 production were deployed and HTTP-verified.
+- next: complete a signed-in Chief prompt test with a Connecticut Department of Banking URL, and plan the Node.js 20 Firebase Functions runtime upgrade before October 30, 2026.
 
 ### 2026-05-08 - Added public-web research contracts
 
