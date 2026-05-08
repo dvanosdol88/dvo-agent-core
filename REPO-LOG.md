@@ -4,9 +4,20 @@
 
 ## Current Capabilities
 
-`@dvo/agent-core` v0.1.4 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It currently exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts (`search_thread_history`, `get_operator_profile`, `get_launch_state`, `list_milestones`, `search_canon`), Workspace/Drive file-operation contracts, and save-receipt metadata. App-specific behavior stays in consuming apps; CTO is the first consumer, and RIA Builder/RIA Chief should not take a production dependency until package distribution and consumer verification are handled separately. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
+`@dvo/agent-core` v0.1.5 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts, Workspace/Drive file-operation contracts, and action-receipt/surface-sync proposal contracts. App-specific behavior stays in consuming apps; CTO is the first consumer, and RIA Builder/RIA Chief should only consume tagged contracts after CTO-side verification. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
 
 ## Sessions
+
+### 2026-05-08 - Added action receipt contracts
+
+**Agent:** Codex GPT-5 | **Surface:** shared contracts / Chief + CTO sync | **Duration:** implementation slice
+
+- changed: bumped package metadata to `0.1.5` and added shared `ActionReceipt`, `SurfaceItemRef`, `SurfaceStateUpdate`, and `SurfaceSyncProposal` contracts.
+- added: `src/actions.ts` with receipt/proposal builders and generic `record_action_receipt` / `propose_surface_sync` tool contracts.
+- tagged: `v0.1.4` to align the prior package version, then tagged and pushed `v0.1.5`.
+- verified: `npm test` passed with 21 Node test cases after TypeScript build.
+- deployed: package tag only; no app production deploy from this repo.
+- next: keep this contracts-only and let apps own concrete writes and auth.
 
 ### 2026-05-06 - Added Workspace/Drive shared contracts
 
