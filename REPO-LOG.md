@@ -4,9 +4,18 @@
 
 ## Current Capabilities
 
-`@dvo/agent-core` v0.1.5 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts, Workspace/Drive file-operation contracts, and action-receipt/surface-sync proposal contracts. App-specific behavior stays in consuming apps; CTO is the first consumer, and RIA Builder/RIA Chief should only consume tagged contracts after CTO-side verification. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
+`@dvo/agent-core` v0.1.6 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts, Workspace/Drive file-operation contracts, public-web research contracts, and action-receipt/surface-sync proposal contracts. App-specific behavior stays in consuming apps; CTO is the first consumer, and RIA Builder/RIA Chief should only consume tagged contracts after CTO-side verification. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
 
 ## Sessions
+
+### 2026-05-08 - Added public-web research contracts
+
+**Agent:** Codex GPT-5 | **Surface:** shared contracts / Chief + CTO web research | **Duration:** implementation slice
+
+- changed: bumped package metadata to `0.1.6` and added shared public-web contracts for search, URL reading, link mapping, and bounded site crawling.
+- added: `src/web.ts` with `WebSourceRef`, `WebReadResult`, `WebLinkResult`, canonical public-web tool contracts, and lookup helper.
+- verified: `npm test` passed with 25 Node test cases after TypeScript build.
+- boundary: no Tavily execution, browser automation, authenticated browsing, secrets, or consumer-app runtime behavior was added to the shared package.
 
 ### 2026-05-08 - Added action receipt contracts
 

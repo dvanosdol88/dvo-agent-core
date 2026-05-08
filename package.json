@@ -1,6 +1,6 @@
 {
   "name": "@dvo/agent-core",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Shared low-risk agent contracts and handoff helpers for dvo88 Chief/CTO infrastructure.",
   "type": "module",
   "main": "./dist/index.js",

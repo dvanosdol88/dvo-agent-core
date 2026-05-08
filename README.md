@@ -41,3 +41,14 @@ The package still does not implement Google APIs, Firebase checks, token storage
 - `buildSurfaceSyncProposal()`
 
 These contracts are for durable evidence and cross-surface reconciliation metadata. They do not write to Firestore, update RIA Builder cards/checklists, or mutate CTO project state. Consumer apps own concrete reads, writes, auth, and review UI.
+
+## Public Web Contracts
+
+`v0.1.6` adds generic public-web research contract names and result shapes:
+
+- `search_web`
+- `read_web_url`
+- `list_web_page_links`
+- `crawl_web_site`
+
+It also exports `WebSourceRef`, `WebReadResult`, `WebLinkResult`, and `getPublicWebToolContract()` so consuming apps can describe public web search, URL reading, link mapping, and bounded crawling without bundling a browser, scraper, API key, or provider-specific execution into the shared package.
