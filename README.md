@@ -28,3 +28,16 @@ It also exports `MemorySearchResult` and `buildMemorySaveReceipt()` so consuming
 `v0.1.4` adds generic Workspace/Drive contract names and result/receipt shapes for connected-file operations such as listing, searching, reading bounded text, creating documents/folders, appending to documents, renaming, moving, and copying files.
 
 The package still does not implement Google APIs, Firebase checks, token storage, or app-specific write behavior. Consuming apps own provider-specific execution and auth.
+
+## Action Receipt Contracts
+
+`v0.1.5` adds generic action-receipt and surface-sync proposal shapes:
+
+- `ActionReceipt`
+- `SurfaceItemRef`
+- `SurfaceStateUpdate`
+- `SurfaceSyncProposal`
+- `buildActionReceipt()`
+- `buildSurfaceSyncProposal()`
+
+These contracts are for durable evidence and cross-surface reconciliation metadata. They do not write to Firestore, update RIA Builder cards/checklists, or mutate CTO project state. Consumer apps own concrete reads, writes, auth, and review UI.
