@@ -52,3 +52,17 @@ These contracts are for durable evidence and cross-surface reconciliation metada
 - `crawl_web_site`
 
 It also exports `WebSourceRef`, `WebReadResult`, `WebLinkResult`, and `getPublicWebToolContract()` so consuming apps can describe public web search, URL reading, link mapping, and bounded crawling without bundling a browser, scraper, API key, or provider-specific execution into the shared package.
+
+## Implementation Request Contracts
+
+`v0.1.7` adds bounded implementation-request shapes:
+
+- `AgentImplementationRequest`
+- `ImplementationResult`
+- `RepoWorkScope`
+- `VerificationRequirement`
+- `buildImplementationRequest()`
+- `buildImplementationResult()`
+- `buildImplementationHandoffMarkdown()`
+
+These contracts let CTO and RIA Chief describe scoped repo work for an external execution agent. They do not run shell commands, edit files, commit, deploy, verify production, or write app-specific state. Consumer apps own request storage, approval flow, execution dispatch, auth, and review UI.

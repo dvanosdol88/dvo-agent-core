@@ -1,5 +1,6 @@
 export * from "./prompt.js";
 export * from "./actions.js";
+export * from "./implementation-requests.js";
 export * from "./memory.js";
 export * from "./reports.js";
 export * from "./tools.js";
