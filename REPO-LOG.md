@@ -4,9 +4,19 @@
 
 ## Current Capabilities
 
-`@dvo/agent-core` v0.1.6 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts, Workspace/Drive file-operation contracts, public-web research contracts, and action-receipt/surface-sync proposal contracts. App-specific behavior stays in consuming apps: RIA Builder now implements the public-web tools for RIA Chief through Tavily, while CTO currently consumes the v0.1.6 contract vocabulary without a runtime web tool loop. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
+`@dvo/agent-core` v0.1.7 is the shared low-risk TypeScript contract package for David's CTO/RIA Chief infrastructure. It exports agent identity, thread/message/content block types, handoff report schemas and markdown rendering, prompt/canon helpers, generic tool contract shapes, Phase 2A memory retrieval contracts, Workspace/Drive file-operation contracts, public-web research contracts, action-receipt/surface-sync proposal contracts, and bounded implementation-request contracts. App-specific behavior stays in consuming apps: CTO and RIA Chief can create/read implementation requests, while actual repo execution remains outside assistant chat. Run `npm test` before publishing, tagging, or wiring a consuming app to a new version.
 
 ## Sessions
+
+### 2026-05-24 - Added implementation-request contracts
+
+**Agent:** Codex GPT-5 | **Surface:** shared CTO/RIA Chief contracts | **Duration:** implementation slice
+
+- changed: bumped package metadata to `0.1.7` and added `src/implementation-requests.ts` for bounded repo-work requests/results, handoff markdown rendering, and tool contracts.
+- added: request/result builders plus create/update/result tool contract exports through `src/index.ts`.
+- verified: `npm test` passed with 30 Node test cases.
+- tagged: `v0.1.7` pushed to GitHub for command-center and RIA Builder consumers.
+- boundary: no shell, filesystem, git, deploy, production-write, or consumer runtime behavior was added to this contracts-only package.
 
 ### 2026-05-08 - Wrapped public-web workspace rollout
 
